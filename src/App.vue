@@ -6,7 +6,21 @@ import { ref } from "vue";
 // any of the + - / or *
 // then expect any number
 // when computeResults runs, replace input with the result
-const bothNumbers = ref("");
+
+// NUMBER1 if number 1 had a value,
+// next input is an operator, then
+// set NUMBER2 to have the next input value
+// & dont accept any other text
+
+// numOne, numTwo and operator will reflect the input,
+// numbers first typed will go into numOne
+// when an operator is added, a space will be put before it in the input,
+// and the operator will go into operator
+// when another number is typed after, it will go into numTwo
+const inputString = ref("");
+const numOne = ref(null);
+const numTwo = ref(null);
+const operator = ref("");
 
 const add = (a, b) => {
   return a + b;
@@ -29,7 +43,7 @@ const computeResult = () => {
   bothNumbers.value = finalNumber;
 };
 
-const inputNumber = () => {};
+const changeInput = () => {};
 </script>
 
 <template>
