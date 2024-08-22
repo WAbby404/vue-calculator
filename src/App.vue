@@ -7,6 +7,8 @@ const operator = ref("");
 const result = ref("");
 
 const computeResult = () => {
+  // need to check if all 3 have values before we compute resutls
+  // throw error if not
   let num = parseInt(numOne.value);
   let nom = parseInt(numTwo.value);
 
@@ -31,7 +33,7 @@ const changeInput = (input) => {
   // when an operator is added, a space will be put before it in the input,
   // and the operator will go into operator
   // when another number is typed after, it will go into numTwo
-
+  result.value = "";
   if (typeof input !== "number") {
     operator.value = input;
   } else if (operator.value === "") {
@@ -50,7 +52,7 @@ const changeInput = (input) => {
       }`
     }}
   </h1>
-  <h2>{{ result }}</h2>
+  <h2 v-show="result.value !== ''">{{ result }}</h2>
   <ol>
     <li v-for="index in 10" :key="index">
       <button type="text" @click="changeInput(index - 1)">
