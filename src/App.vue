@@ -33,6 +33,13 @@ const changeInput = (input) => {
   // when an operator is added, a space will be put before it in the input,
   // and the operator will go into operator
   // when another number is typed after, it will go into numTwo
+  //
+  // when someone types an operator after already having a number
+  // result needs to be stored in numOne
+  // while operator and numTwo are wiped clean
+  // if(typeof input === "number"){
+
+  // }
   result.value = "";
   if (typeof input !== "number") {
     operator.value = input;
